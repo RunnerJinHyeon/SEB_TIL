@@ -1,4 +1,4 @@
-## SEB_TIL
+## SEB_TIL  
 
 ## React SPA
 - SPA란 single page application 의 약자로 웹페이지에서 상호작용할때 웹페이지 전체를 다시 불러오는것이 아닌 바뀌어야 할곳만 바뀌게 만들어 트래픽이 과도하게 사용되는 현상을 줄일 수 있다.
