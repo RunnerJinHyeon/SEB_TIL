@@ -22,3 +22,11 @@
 ### 3단계
 - 요청은 2단계와 같으나 응답에 리소스의 URI를 포함한 링크요소를 포함해야한다.
 - HATEOAS(Hypermedia As The Engine Of Application State)
+
+## OPEN API
+- 정부에서 제공하는 공공데이터를 OPEN API 형태로 제공.
+- 말그대로 누구에게나 열려있는 API
+
+## API KEY
+- API 를 이용하기 위해선 API KEY 가 필요하다.
+- 로그인한 이용자에게 접근할 수 있는 권한을 API KEY 형태로 제공, 데이터요청시 해당 키를 같이 전달해야한다.
