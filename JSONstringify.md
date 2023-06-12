@@ -57,3 +57,40 @@
 }
 
 - 인자로 받아오는 데이터의 형태(문자열,객체,배열 등) 의 조건에 따라 각각 다른 조건문으로 구현.
+
+
+## Tree ui
+- function createTreeView(menu, currentNode) {
+  // TODO: createTreeView 함수를 작성하세요.
+
+  for (let item of menu) {
+    if (item.children === undefined) {
+    
+      const li = document.createElement("li");
+      currentNode.append(li);
+      li.textContent = item.name;
+    
+    } else {
+     
+      const li = document.createElement("li");
+      currentNode.append(li);
+      
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      li.append(input);
+      
+      const span = document.createElement("span");
+      span.textContent = item.name;
+      li.append(span);
+ 
+      const childrenUl = document.createElement("ul");
+      li.append(childrenUl);
+
+      createTreeView(item.children, childrenUl);
+      
+    }
+  }
+}
+- 인자로 받아온 메뉴의 아이템에 자식요소가 없으면 li태그 생성 후 아이템 이름넣기.
+- 나머지경우 li 태그 생성 후 체크박스와 이름 넣고 해당 자식요소의 ul생성.
+- 생성한 자식요소의 ul을 인자로 자기자신함수를 재귀호출하여 사용.
