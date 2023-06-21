@@ -5,7 +5,8 @@
 - 이러한 프롭스 드릴링 현상을 줄이려면 컴포넌트와 관련된 state 는 최대한 해당컴포넌트와 가깝게 위치시키거나, 상태관리 라이브러리(Redux)를 사용할 수 있다.
 
 ## 예시코드
-- import React, { useState } from 'react';
+```javascript
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -117,9 +118,11 @@ function Child4({ plusNum, minusNum }) {
     </Container>
   );
 }
+```
 - 위처럼 child4에 숫자를 변경시킬 수 있는 버튼이 있고, 해당 상태가 부모의 부모의 부모의 부모인 메인컴포넌트인 App컴포넌트에 선언이 되있을경우, child3,child2,child1 에 일일히 state를 넘겨줘야만 child4의 버튼이 정상적으로 동작하게된다.
 - 위와같은 번거로움, 가독성문제 등을 해결하기 위해 아래의 리덕스(Redux)를 활용한 예시를 보자.
-- import React, { useState } from 'react';
+```javascript
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -216,4 +219,5 @@ function Child4() {
     </Container>
   );
 }
+```
 - 위코드에서처럼 react-redux의 useSelector와 useDispatch를 import해오고 관리할 상태를 메인 컴포넌트인 App에서 useSelector를 사용하여 선언후 실제로 해당 상태를 사용할 child4에서 useDispatch를 통해 상태를 불러와 사용하면 props drilling 현상을 막을 수 있다.
